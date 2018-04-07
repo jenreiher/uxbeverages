@@ -1,0 +1,40 @@
+<head>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+
+<div id="app">
+    <label for="quantity">Quantity of bottles/cans purchased</label>    
+    <select name="quantity" v-model="quantity">
+      <option value="1">1</option> 
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+    </select>
+
+    <label for="quantity">Type of Beverage</label>    
+    <select name="type" v-model="type">
+      <option value="beer">Beer</option> 
+      <option value="wine">Wine</option>
+      <option value="cider">Cider</option>
+      <option value="spirit">Spirit</option>
+      <option value="non-alcholic">Non-alcoholic</option>
+    </select>
+
+    <label for="volume">Volume in mL</label>
+    <input type="text" name="volume" v-model="volume" required />
+
+    <input type="submit" value="Calculate" v-on:click="calculate" />  
+  <span>
+    {{total}}
+  </span>
+</div>
+
+<script src="./calculator.js"></script>
