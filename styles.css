@@ -1,0 +1,29 @@
+.section {
+    padding: 25px 40px;
+}
+
+.calculator {
+  background-color: lightyellow;
+}
+
+h2 label {
+  margin-top: 0;
+}
+
+.input-wrapper {
+  display: block;
+  margin: 25px 0px;
+  padding: 0 15px 20px 15px;
+  background-color: #eee;
+  border: 1px solid #666;
+}
+
+input[type="text"],
+select {
+  display: block;
+  margin: 5px 0;
+}
+
+.output {
+  background-color: lightblue;
+}

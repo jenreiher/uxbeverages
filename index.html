@@ -1,40 +1,60 @@
 <head>
     <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <div id="app">
-    <label for="quantity">Quantity of bottles/cans purchased</label>    
-    <select name="quantity" v-model="quantity">
-      <option value="1">1</option> 
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-      <option value="8">8</option>
-      <option value="9">9</option>
-      <option value="10">10</option>
-      <option value="11">11</option>
-      <option value="12">12</option>
-    </select>
+  <div class="calculator section">
+    <h1>Calculate the value of your beverage</h1>
 
-    <label for="quantity">Type of Beverage</label>    
-    <select name="type" v-model="type">
-      <option value="beer">Beer</option> 
-      <option value="wine">Wine</option>
-      <option value="cider">Cider</option>
-      <option value="spirit">Spirit</option>
-      <option value="non-alcholic">Non-alcoholic</option>
-    </select>
+    <div class="input-wrapper">
+      <h2><label for="quantity">Type of Beverage</label></h2>   
+      <select name="type" v-model="type">
+        <option value="beer">Beer</option> 
+        <option value="wine">Wine</option>
+        <option value="cider">Cider</option>
+        <option value="spirit">Spirit</option>
+        <option value="non-alcholic">Non-alcoholic</option>
+      </select>
+    </div>
 
-    <label for="volume">Volume in mL</label>
-    <input type="text" name="volume" v-model="volume" required />
+    <div class="input-wrapper">
+      <h2><label for="volume">Volume in mL</label></h2>
+      <input type="text" name="volume" v-model="volume" required />
 
-    <input type="submit" value="Calculate" v-on:click="calculate" />  
-  <span>
-    {{total}}
-  </span>
+    </div>
+
+    <div class="input-wrapper">
+      <h2><label for="quantity">Quantity</label></h2>    
+      <select name="quantity" v-model="quantity">
+        <option value="1">1</option> 
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+      </select>
+    </div>
+
+    <input type="submit" value="Calculate" v-on:click="calculate" />
+  </div>
+
+<div class="output section">
+  <h1>Total token value:</h1>
+  <div class="total">
+    <h2>
+      {{total}}
+    </h2>
+  </div>
 </div>
+</div>
+
+
 
 <script src="./calculator.js"></script>
