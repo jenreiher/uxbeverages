@@ -18,10 +18,10 @@ h2 label {
   border: 1px solid #666;
 }
 
-input[type="text"],
 select {
   display: block;
   margin: 5px 0;
+  width: 150px;
 }
 
 h3 {
