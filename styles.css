@@ -24,6 +24,29 @@ select {
   margin: 5px 0;
 }
 
+.legend {
+  display: none;
+}
+
+table {
+  background-color: white;
+  border: 1px solid black;
+}
+
+table th {
+  background-color: darkblue;
+  color: white;
+  padding: 8px 15px;
+}
+
+table td {
+  padding: 8px 15px;
+}
+
+table tr:nth-of-type(odd) {
+  background-color: #ddd;
+}
+
 .output {
   background-color: lightblue;
 }

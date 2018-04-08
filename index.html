@@ -8,23 +8,96 @@
     <h1>Calculate the value of your beverage</h1>
 
     <div class="input-wrapper">
-      <h2><label for="quantity">Type of Beverage</label></h2>   
+      <h2><label for="quantity">Type of Liquid</label></h2>   
       <select name="type" v-model="type">
         <option value="beer">Beer</option> 
         <option value="wine">Wine</option>
         <option value="cider">Cider</option>
         <option value="spirit">Spirit</option>
-        <option value="non-alcholic">Non-alcoholic</option>
+        <option value="highball">Highball</option>
+        <option value="nonalcholic">Non-alcoholic</option>
+      </select>
+    </div>
+
+        <div class="input-wrapper">
+      <h2><label for="volume">Amount Consuming</label></h2>
+      <select name="volumeDrinking" v-model="volumeDrinking">
+        <option value="na" selected>N/A</option>
+        <option v-for="option in drinkOptions[this.type]" v-bind:value="option.mL">
+          {{ option.description}} ({{option.oz}}oz/{{option.mL}}mL)
+        </option>
       </select>
     </div>
 
     <div class="input-wrapper">
-      <h2><label for="volume">Volume in mL</label></h2>
-      <input type="text" name="volume" v-model="volume" required />
-
+      <h2><label for="volume">Amount Contributing</label></h2>
+      <select name="volumeBuying" v-model="volumeBuying">
+        <option value="na" selected>N/A</option>
+        <option v-for="option in buyOptions[this.type]" v-bind:value="option.mL">
+          {{ option.description}} ({{option.oz}}oz/{{option.mL}}mL)
+        </option>
+      </select>
+<!--       <input type="text" name="volume" v-model="volume" required />
+ -->      
+      <div class="legend">
+        <table>
+          <thead>
+              <tr>
+                  <th colspan="3">Legend</th>
+              </tr>
+              <tr>
+                  <th>Type</th>
+                  <th>Volume</th>
+                  <th>Equivalency</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>2oz shot</td>
+                  <td>60 mL</td>
+              </tr> 
+              <tr>
+                  <td>8oz Glass</td>
+                  <td>235 mL</td>
+                  <td>2oz spirit + ~1/2 can non-alcoholic</td>
+              </tr>  
+              <tr>
+                  <td>9oz Glass</td>
+                  <td>250 mL</td>
+                  <td>1/3 wine bottle</td>
+              </tr>   
+              <tr>
+                  <td>Small Can</td>
+                  <td>355 mL</td>
+              </tr>
+              <tr>
+                  <td>12oz Glass</td>
+                  <td>355 mL</td>
+                  <td>1 small can or ~1/2 bomber</td>
+              </tr> 
+              <tr>
+                  <td>Tall Can</td>
+                  <td>473 mL</td>
+              </tr>
+              <tr>
+                  <td>16oz Glass</td>
+                  <td>473 mL</td>
+                  <td>1 tall can</td>
+              </tr> 
+              <tr>
+                  <td>Bomber</td>
+                  <td>650 mL</td>
+              </tr>
+              <tr>
+                  <td>Wine Bottle</td>
+                  <td>750 mL</td>
+              </tr>            
+          </tbody>
+        </table>
+      </div>
     </div>
 
-    <div class="input-wrapper">
+    <div class="input-wrapper" v-if="this.volumeBuying != 'na'">
       <h2><label for="quantity">Quantity</label></h2>    
       <select name="quantity" v-model="quantity">
         <option value="1">1</option> 
@@ -42,14 +115,13 @@
       </select>
     </div>
 
-    <input type="submit" value="Calculate" v-on:click="calculate" />
   </div>
 
 <div class="output section">
   <h1>Total token value:</h1>
   <div class="total">
     <h2>
-      {{total}}
+      {{ calculate }}
     </h2>
   </div>
 </div>
