@@ -9,6 +9,7 @@ new Vue({
       emphasis: '',
       plain: '(You haven\'t done anything yet!)',
     },
+    total: 0,
     tokens: {
       net: 'tokens',
       white: 0,
@@ -229,6 +230,7 @@ new Vue({
         volumeDrinking: "na",
         volumeBuying: "na",
         type: "beer",
+        total: 0,
         tokenMsg: {
           emphasis: '',
           plain: '(You haven\'t done anything yet!)',
@@ -272,28 +274,6 @@ new Vue({
 
       return value;
     },
-    tokenBreakdown: function(total) {
-      let remainder = total;
-      let white = 1;
-      let red = 5;
-      let blue = 10;
-
-      function calcRemainder(remainder, tokenValue) {
-        return remainder % tokenValue;
-      }
-
-      if(remainder/blue > 1) {
-        this.tokens.blue = Math.floor(remainder/blue);
-        remainder = calcRemainder(remainder, blue);
-      } 
-      if (remainder/red > 1) {
-        this.tokens.red = Math.floor(remainder/red);
-        remainder = calcRemainder(remainder, red);
-      }
-      if (remainder/white >= 1) {
-        this.tokens.white = Math.floor(remainder/white);
-      }
-    }
   },
   computed: {
     calculateTokens: function () {
@@ -350,10 +330,32 @@ new Vue({
         }
 
         worth = Math.abs(worth);
-        this.tokenBreakdown(worth);
+        this.total = worth;
       }
       
       return worth;
-    }
+    },
+    tokenBreakdown: function() {
+      let remainder = this.total;
+      let white = 1;
+      let red = 5;
+      let blue = 10;
+
+      function calcRemainder(remainder, tokenValue) {
+        return remainder % tokenValue;
+      }
+
+      if(remainder/blue > 1) {
+        this.tokens.blue = Math.floor(remainder/blue);
+        remainder = calcRemainder(remainder, blue);
+      } 
+      if (remainder/red > 1) {
+        this.tokens.red = Math.floor(remainder/red);
+        remainder = calcRemainder(remainder, red);
+      }
+      if (remainder/white >= 1) {
+        this.tokens.white = Math.floor(remainder/white);
+      }
+    },
   },
 });
