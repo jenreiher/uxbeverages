@@ -255,14 +255,17 @@ new Vue({
       let red = 5;
       let blue = 10;
 
-      if(remainder/blue >= 1) {
-        this.tokens.blue = Math.floor(remainder/blue);
-        remainder = remainder % 10;
+      function calcRemainder(remainder, tokenValue) {
+        return remainder % tokenValue;
       }
-      if (remainder/red >= 1) {
+
+      if(remainder/blue > 1) {
+        this.tokens.blue = Math.floor(remainder/blue);
+        remainder = calcRemainder(remainder, blue);
+      } 
+      if (remainder/red > 1) {
         this.tokens.red = Math.floor(remainder/red);
-        remainder = remainder % 5;
-        console.log(remainder)
+        remainder = calcRemainder(remainder, red);
       }
       if (remainder/white >= 1) {
         this.tokens.white = Math.floor(remainder/white);
@@ -322,7 +325,6 @@ new Vue({
           }
           this.tokens.net = 'tokens add'
         }
-        console.log(this.tokenMsg)
 
         worth = Math.abs(worth);
         this.tokenBreakdown(worth);
