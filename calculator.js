@@ -211,6 +211,7 @@ new Vue({
         },
       ],
     },
+    tokenMsg: '(You haven\'t done anything yet!)',
   },
   methods: {
     calcValue: function(type) {
@@ -246,7 +247,7 @@ new Vue({
       let quantityBuying = 0;
       let standardizeAmtBuying = 0;
       let standardizeAmtDrinking = 0;
-      let worth = 1;
+      let worth = false;
 
       // Get the value of a beverage type
       value = this.calcValue(this.type);
@@ -266,9 +267,25 @@ new Vue({
         standardizeAmtDrinking = this.volumeDrinking/355;
       }
 
-      // Worth is a function of a beverages value multipled by its standardized amount
-      worth = Math.abs(Math.round((value * standardizeAmtBuying) - (value * standardizeAmtDrinking)));
+      if(standardizeAmtBuying || standardizeAmtDrinking) {
+        // Worth is a function of a beverages value multipled by its standardized amount
+        worth = Math.round(value * standardizeAmtBuying) - Math.round(value * standardizeAmtDrinking);
 
+        // Set the token msg
+        if(worth === 0) {
+          this.tokenMsg = 'So youre just buying for yourself then?';
+        }
+        if(worth > 0) {
+          this.tokenMsg = 'Remove from the token stash:';
+        }
+        if(worth < 0) {
+          this.tokenMsg = 'Add to the token stash:';
+        }
+
+
+        worth = Math.abs(worth);
+      }
+      
       return worth;
     }
   },
