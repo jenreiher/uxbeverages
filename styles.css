@@ -32,3 +32,36 @@ h3 {
 .output {
   background-color: lightblue;
 }
+
+.tokens {
+  display: flex;
+}
+
+.token {
+  border-radius: 50%;
+  height: 75px;
+  width: 75px;
+  text-align: center;
+  font-size: 50px;
+  border: 1px dotted black;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.token.blue {
+  background-color: blue;
+}
+
+.token.red {
+  background-color: red;
+}
+
+.token.white {
+  background-color: white;
+}
+
+.add .token {
+  mix-blend-mode: soft-light;
+}

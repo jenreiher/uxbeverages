@@ -211,7 +211,16 @@ new Vue({
         },
       ],
     },
-    tokenMsg: '(You haven\'t done anything yet!)',
+    tokenMsg: {
+      emphasis: '',
+      plain: '(You haven\'t done anything yet!)',
+    },
+    tokens: {
+      net: 'tokens',
+      white: 0,
+      red: 0,
+      blue: 0
+    }
   },
   methods: {
     calcValue: function(type) {
@@ -240,9 +249,28 @@ new Vue({
 
       return value;
     },
+    tokenBreakdown: function(total) {
+      let remainder = total;
+      let white = 1;
+      let red = 5;
+      let blue = 10;
+
+      if(remainder/blue >= 1) {
+        this.tokens.blue = Math.floor(remainder/blue);
+        remainder = remainder % 10;
+      }
+      if (remainder/red >= 1) {
+        this.tokens.red = Math.floor(remainder/red);
+        remainder = remainder % 5;
+        console.log(remainder)
+      }
+      if (remainder/white >= 1) {
+        this.tokens.white = Math.floor(remainder/white);
+      }
+    }
   },
   computed: {
-    calculate: function () {
+    calculateTokens: function () {
       let value = 1;
       let quantityBuying = 0;
       let standardizeAmtBuying = 0;
@@ -273,17 +301,31 @@ new Vue({
 
         // Set the token msg
         if(worth === 0) {
-          this.tokenMsg = 'So youre just buying for yourself then?';
-        }
-        if(worth > 0) {
-          this.tokenMsg = 'Remove from the token stash:';
-        }
-        if(worth < 0) {
-          this.tokenMsg = 'Add to the token stash:';
+          this.tokenMsg = {
+            emphasis: 'So you\'re just buying for yourself then?!',
+            plain: ''
+          }
         }
 
+        if(worth > 0) {
+          this.tokenMsg = {
+            emphasis: 'Take',
+            plain: 'from the token stash.'
+          }
+          this.tokens.net = 'tokens remove';
+        }
+
+        if(worth < 0) {
+          this.tokenMsg = {
+            emphasis: 'Add',
+            plain: 'to the token stash.'
+          }
+          this.tokens.net = 'tokens add'
+        }
+        console.log(this.tokenMsg)
 
         worth = Math.abs(worth);
+        this.tokenBreakdown(worth);
       }
       
       return worth;

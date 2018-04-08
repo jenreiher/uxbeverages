@@ -9,7 +9,7 @@
 
     <div class="input-wrapper">
       <h2>Whatca Got?</h2>
-      <h3><label for="quantity">Type of Liquid</label></h3>   
+      <h3><label for="quantity">Type of Liquid:</label></h3>   
       <select name="type" v-model="type">
         <option value="beer">Beer</option> 
         <option value="wine">Wine</option>
@@ -22,7 +22,7 @@
 
     <div class="input-wrapper">
       <h2>Whatcha Drinking?</h2>
-      <h3><label for="volume">Amount of beverage</label></h3>
+      <h3><label for="volume">Amount of beverage you plan to consume right now:</label></h3>
       <select name="volumeDrinking" v-model="volumeDrinking">
         <option value="na" selected>N/A</option>
         <option v-for="option in drinkOptions[this.type]" v-bind:value="option.mL">
@@ -33,7 +33,7 @@
 
     <div class="input-wrapper">
       <h2>Whatcha Bought?</h2>
-      <h3><label for="quantity">Number of bottles/cans you are adding to the fridge (including the one you may be drinking)</label></h3>    
+      <h3><label for="quantity">Number of bottles/cans you are adding to the fridge (including the one you plan to drink):</label></h3>    
       <select name="quantity" v-model="quantity">
         <option value="1">1</option> 
         <option value="2">2</option>
@@ -49,28 +49,41 @@
         <option value="12">12</option>
       </select>
 
-      <h3><label for="volume">Type of bottle/can contributing</label></h3>
+      <h3><label for="volume">Type of bottle/can contributing:</label></h3>
       <select name="volumeBuying" v-model="volumeBuying">
         <option value="na" selected>N/A</option>
         <option v-for="option in buyOptions[this.type]" v-bind:value="option.mL">
           {{ option.description}} ({{option.oz}}oz/{{option.mL}}mL)
         </option>
       </select>
-
-
     </div>
-
-    
-
   </div>
 
 <div class="output section">
-  <h1>{{ tokenMsg }}</h1>
+  <h1>
+    <span v-if="tokenMsg.emphasis">
+      <em>{{ tokenMsg.emphasis }}</em>
+    </span>
+    <span v-if="calculateTokens != 0">
+      {{ calculateTokens }} token<span v-if="calculateTokens > 1">s</span>
+    </span>
+    <span v-if="tokenMsg.plain">
+      {{ tokenMsg.plain }}
+    </span>
+  </h1>
 
-  <div class="total" v-if="calculate != 0">
-    <h2>
-      {{ calculate }} Token<span v-if="calculate > 1">s</span>
-    </h2>
+  <div class="total" v-if="calculateTokens != 0">
+    <div v-bind:class="tokens.net">
+      <div class="token white" v-for="n in tokens.white">
+        1
+      </div>
+      <div class="token red"  v-for="n in tokens.red">
+        5
+      </div>
+      <div class="token blue"  v-for="n in tokens.blue">
+        10
+      </div>
+    </div>
   </div>
 </div>
 
