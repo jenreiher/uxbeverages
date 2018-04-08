@@ -20,43 +20,47 @@
       </select>
     </div>
 
-    <div class="input-wrapper">
-      <h2>Whatcha Drinking?</h2>
-      <h3><label for="volume">Amount of beverage you plan to consume right now:</label></h3>
-      <select name="volumeDrinking" v-model="volumeDrinking">
-        <option value="na" selected>N/A</option>
-        <option v-for="option in drinkOptions[this.type]" v-bind:value="option.mL">
-          {{ option.description}} ({{option.oz}}oz/{{option.mL}}mL)
-        </option>
-      </select>
+    <div class="two-up">
+      <div class="input-wrapper">
+        <h2>Whatcha Drinking?</h2>
+        <h3><label for="volume">Amount of beverage you plan to consume right now:</label></h3>
+        <select name="volumeDrinking" v-model="volumeDrinking">
+          <option value="na" selected>N/A</option>
+          <option v-for="option in drinkOptions[this.type]" v-bind:value="option.mL">
+            {{ option.description}} ({{option.oz}}oz/{{option.mL}}mL)
+          </option>
+        </select>
+      </div>
+
+      <div class="input-wrapper">
+        <h2>Whatcha Bought?</h2>
+        <h3><label for="quantity">Number of bottles/cans you are adding to the fridge (including the one you plan to drink):</label></h3>    
+        <select name="quantity" v-model="quantity">
+          <option value="1">1</option> 
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+        </select>
+
+        <h3><label for="volume">Type of bottle/can contributing:</label></h3>
+        <select name="volumeBuying" v-model="volumeBuying">
+          <option value="na" selected>N/A</option>
+          <option v-for="option in buyOptions[this.type]" v-bind:value="option.mL">
+            {{ option.description}} ({{option.oz}}oz/{{option.mL}}mL)
+          </option>
+        </select>
+      </div>
     </div>
 
-    <div class="input-wrapper">
-      <h2>Whatcha Bought?</h2>
-      <h3><label for="quantity">Number of bottles/cans you are adding to the fridge (including the one you plan to drink):</label></h3>    
-      <select name="quantity" v-model="quantity">
-        <option value="1">1</option> 
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-        <option value="11">11</option>
-        <option value="12">12</option>
-      </select>
-
-      <h3><label for="volume">Type of bottle/can contributing:</label></h3>
-      <select name="volumeBuying" v-model="volumeBuying">
-        <option value="na" selected>N/A</option>
-        <option v-for="option in buyOptions[this.type]" v-bind:value="option.mL">
-          {{ option.description}} ({{option.oz}}oz/{{option.mL}}mL)
-        </option>
-      </select>
-    </div>
+    
 </div>
 
 <div class="output section">

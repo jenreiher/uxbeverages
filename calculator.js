@@ -21,8 +21,14 @@ new Vue({
         {
           name: 'canSm',
           description: 'Small Can',
-          oz: 12,
+          oz: 12.5,
           mL: 355
+        },
+        {
+          name: 'canEu',
+          description: 'European Can',
+          oz: 15.5,
+          mL: 440
         },
         {
           name: 'canLg',
@@ -31,15 +37,21 @@ new Vue({
           mL: 473
         },
         {
+          name: 'btlEu',
+          description: 'European Bottle',
+          oz: 11.6,
+          mL: 330
+        },
+        {
           name: 'btlSm',
           description: 'Small Bottle',
-          oz: 16,
-          mL: 473
+          oz: 12,
+          mL: 341
         },
         {
           name: 'btlLg',
           description: 'Large Bottle',
-          oz: 21,
+          oz: 22.9,
           mL: 650
         },
       ],
@@ -47,8 +59,14 @@ new Vue({
         {
           name: 'canSm',
           description: 'Small Can',
-          oz: 12,
+          oz: 12.5,
           mL: 355
+        },
+        {
+          name: 'canEu',
+          description: 'European Can',
+          oz: 15.5,
+          mL: 440
         },
         {
           name: 'canLg',
@@ -57,19 +75,31 @@ new Vue({
           mL: 473
         },
         {
+          name: 'btlEu',
+          description: 'European Bottle',
+          oz: 11.6,
+          mL: 330
+        },
+        {
           name: 'btlSm',
           description: 'Small Bottle',
-          oz: 16,
-          mL: 473
-        }
+          oz: 12,
+          mL: 341
+        },
       ],
       wine: [
         {
-          name: 'glass',
+          name: 'glassSm',
+          description: 'Small Glass',
+          oz: 6,
+          mL: 177
+        },
+        {
+          name: 'glassLg',
           description: 'Large Glass',
           oz: 9,
           mL: 255
-        }
+        },
       ],
       spirit: [
         {
@@ -95,22 +125,34 @@ new Vue({
           mL: 355
         },
         {
+          name: 'canMd',
+          description: 'Medium Can',
+          oz: 16,
+          mL: 473
+        },
+        {
           name: 'canLg',
           description: 'Large Can',
-          oz: 16,
-          mL: 473
+          oz: 24,
+          mL: 710
         },
         {
-          name: 'btlSm',
-          description: 'Small Bottle',
-          oz: 16,
-          mL: 473
+          name: 'glassSm',
+          description: 'Small Glass',
+          oz: 8,
+          mL: 236
         },
         {
-          name: 'btlLg',
-          description: 'Large Bottle',
-          oz: 21,
-          mL: 650
+          name: 'glassMd',
+          description: 'Medium Glass',
+          oz: 12,
+          mL: 355
+        },
+        {
+          name: 'glassLg',
+          description: 'Large Glass',
+          oz: 16,
+          mL: 473
         },
       ],
     },
@@ -119,8 +161,14 @@ new Vue({
         {
           name: 'canSm',
           description: 'Small Can',
-          oz: 12,
+          oz: 12.5,
           mL: 355
+        },
+        {
+          name: 'canEu',
+          description: 'European Can',
+          oz: 15.5,
+          mL: 440
         },
         {
           name: 'canLg',
@@ -129,15 +177,21 @@ new Vue({
           mL: 473
         },
         {
+          name: 'btlEu',
+          description: 'European Bottle',
+          oz: 11.6,
+          mL: 330
+        },
+        {
           name: 'btlSm',
           description: 'Small Bottle',
-          oz: 16,
-          mL: 473
+          oz: 12,
+          mL: 341
         },
         {
           name: 'btlLg',
           description: 'Large Bottle',
-          oz: 21,
+          oz: 22.9,
           mL: 650
         },
       ],
@@ -145,8 +199,14 @@ new Vue({
         {
           name: 'canSm',
           description: 'Small Can',
-          oz: 12,
+          oz: 12.5,
           mL: 355
+        },
+        {
+          name: 'canEu',
+          description: 'European Can',
+          oz: 15.5,
+          mL: 440
         },
         {
           name: 'canLg',
@@ -155,39 +215,63 @@ new Vue({
           mL: 473
         },
         {
-          name: 'btlSm',
-          description: 'Small Bottle',
-          oz: 16,
-          mL: 473
+          name: 'btlEu',
+          description: 'European Bottle',
+          oz: 11.6,
+          mL: 330
         },
         {
-          name: 'btlMd',
-          description: 'Medium Bottle',
-          oz: 21,
-          mL: 650
+          name: 'btlSm',
+          description: 'Small Bottle',
+          oz: 12,
+          mL: 341
         },
         {
           name: 'btlLg',
           description: 'Large Bottle',
-          oz: 32,
-          mL: 750
+          oz: 22.9,
+          mL: 650
         },
       ],
       wine: [
         {
-          name: 'bottleLg',
-          description: 'Large Bottle',
+          name: 'bottleSm',
+          description: 'Half Bottle',
+          oz: 12.7,
+          mL: 375
+        },
+        {
+          name: 'bottleMd',
+          description: 'Regular Bottle',
           oz: 32,
           mL: 750
+        },
+        {
+          name: 'bottleLg',
+          description: 'Magnum Bottle',
+          oz: 50.7,
+          mL: 1500
         },
       ],
       spirit: [
         {
+          name: 'btlSm',
+          description: 'Mickey',
+          oz: 12,
+          mL: 355
+        },
+        {
           name: 'btlMd',
-          description: 'Medium Bottle',
-          oz: 21,
-          mL: 650
-        }
+          description: 'Twenty-Sixer',
+          oz: 25,
+          mL: 750
+        },
+        {
+          name: 'btlLg',
+          description: 'Fourty Ouncer',
+          oz: 40,
+          mL: 1140
+        },
       ],
       nonalcoholic: [
         {
@@ -197,10 +281,16 @@ new Vue({
           mL: 355
         },
         {
-          name: 'canLg',
-          description: 'Large Can',
+          name: 'canMd',
+          description: 'Medium Can',
           oz: 16,
           mL: 473
+        },
+        {
+          name: 'canLg',
+          description: 'Large Can',
+          oz: 24,
+          mL: 710
         },
         {
           name: 'btlSm',
@@ -211,14 +301,14 @@ new Vue({
         {
           name: 'btlMd',
           description: 'Medium Bottle',
-          oz: 16,
-          mL: 473
+          oz: 34,
+          mL: 1000
         },
         {
           name: 'btlLg',
           description: 'Large Bottle',
-          oz: 21,
-          mL: 650
+          oz: 68,
+          mL: 2000
         },
       ],
     },
