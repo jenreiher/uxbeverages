@@ -267,13 +267,8 @@ new Vue({
       }
 
       // Worth is a function of a beverages value multipled by its standardized amount
-      worth = Math.round((value * standardizeAmtBuying) - (value * standardizeAmtDrinking));
+      worth = Math.abs(Math.round((value * standardizeAmtBuying) - (value * standardizeAmtDrinking)));
 
-console.log("value:", value);
-console.log("buying:", quantityBuying);
-console.log("std buying:", standardizeAmtBuying);
-console.log("std drinking:", standardizeAmtDrinking);
-console.log("worth:", worth)
       return worth;
     }
   },
