@@ -5,6 +5,44 @@ new Vue({
     volumeDrinking: "na",
     volumeBuying: "na",
     type: "beer",
+    types: [
+      {
+        value: 'beer',
+        name: 'Beer',
+        class: 'type',
+        icon: 'dark-beer'
+      },
+      {
+        value: 'wine',
+        name: 'Wine',
+        class: 'type',
+        icon: 'red-wine'
+      },
+      {
+        value: 'cider',
+        name: 'Cider',
+        class: 'type',
+        icon: 'lager-beer'
+      },
+      {
+        value: 'spirit',
+        name: 'Spirit',
+        class: 'type',
+        icon: 'whyskey'
+      },
+      {
+        value: 'highball',
+        name: 'Highball',
+        class: 'type',
+        icon: 'white-russian'
+      },
+      {
+        value: 'nonalcoholic',
+        name: 'Non-alcoholic',
+        class: 'type',
+        icon: 'mojito'
+      },
+    ],
     tokenMsg: {
       emphasis: '',
       plain: '(You haven\'t done anything yet!)',
@@ -364,6 +402,16 @@ new Vue({
 
       return value;
     },
+    setType: function(type, index) {
+      this.type = type;
+
+      // Reset set classes
+      this.types.forEach(function(type, index) {
+        type.class = 'type';
+      })
+
+      this.types[index].class = 'type selected';
+    }
   },
   computed: {
     calculateTokens: function () {

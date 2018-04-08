@@ -1,9 +1,28 @@
-.section {
-    padding: 25px 40px;
+@import url('https://fonts.googleapis.com/css?family=Poppins:500,500i,600, 600i, 700,700i');
+
+:root {
+  --accentColor: #FFC300;
 }
 
-.calculator {
-  background-color: lightyellow;
+html, body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+h2 {
+  font-weight: 600
+}
+
+h3 {
+  font-weight: 400;
+}
+
+.section {
+    padding: 25px 40px;
 }
 
 h2 label {
@@ -30,7 +49,8 @@ h3 {
 }
 
 .output {
-  background-color: lightblue;
+  background-color: var(--accentColor);
+  border: 1px solid #666;
 }
 
 .tokens {
@@ -64,4 +84,45 @@ h3 {
 
 .add .token {
   mix-blend-mode: soft-light;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.flex-child {
+  flex-basis: 50%;
+}
+
+.types {
+  display: flex;
+}
+
+.type {
+  height: 85px;
+  width: 145px;
+  font-size: 13px;
+  border: 1px solid #b9b9b9;
+  border-radius: 5px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  padding: 5px;
+  box-shadow: inset 0px 0px 75px 7px #b9b9b9;
+  cursor: pointer;
+}
+
+.type img {
+  height: 50px;
+  width: auto;
+}
+
+.type.selected {
+  border: 1px solid var(--accentColor);
+  box-shadow: inset 0px 0px 75px 7px var(--accentColor);
 }
