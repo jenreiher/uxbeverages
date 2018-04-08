@@ -8,7 +8,7 @@
     <h1>UXBeverage Token Calculator</h1>
 
     <div class="input-wrapper">
-      <h2>Whatca Got?</h2>
+      <h2>Whatcha Got?</h2>
       <h3><label for="quantity">Type of Liquid:</label></h3>   
       <select name="type" v-model="type">
         <option value="beer">Beer</option> 
@@ -57,7 +57,8 @@
         </option>
       </select>
     </div>
-  </div>
+    <button v-on:click="reset">Reset</button>
+</div>
 
 <div class="output section">
   <h1>

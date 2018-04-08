@@ -5,6 +5,16 @@ new Vue({
     volumeDrinking: "na",
     volumeBuying: "na",
     type: "beer",
+    tokenMsg: {
+      emphasis: '',
+      plain: '(You haven\'t done anything yet!)',
+    },
+    tokens: {
+      net: 'tokens',
+      white: 0,
+      red: 0,
+      blue: 0
+    },
     drinkOptions: {
       beer: [
         {
@@ -211,18 +221,31 @@ new Vue({
         },
       ],
     },
-    tokenMsg: {
-      emphasis: '',
-      plain: '(You haven\'t done anything yet!)',
-    },
-    tokens: {
-      net: 'tokens',
-      white: 0,
-      red: 0,
-      blue: 0
-    }
   },
   methods: {
+    reset: function(){
+      let defaultData = {
+        quantity: "1",
+        volumeDrinking: "na",
+        volumeBuying: "na",
+        type: "beer",
+        tokenMsg: {
+          emphasis: '',
+          plain: '(You haven\'t done anything yet!)',
+        },
+        tokens: {
+          net: 'tokens',
+          white: 0,
+          red: 0,
+          blue: 0
+        },
+      }
+
+      // Loop over all the values and reset them to their default
+      for (data in defaultData) {
+        Object.assign(this.$data[data] = defaultData[data])
+      }
+    },
     calcValue: function(type) {
       // 1 is the default. Only adjust if its value is not this.
       let value = 1;
