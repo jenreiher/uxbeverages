@@ -87,7 +87,7 @@
     </span>
   </h1>
 
-  <div class="total" v-bind="tokenBreakdown">
+  <div class="total" v-bind="tokenBreakdown" v-if="calculateTokens != 0">
     <div v-bind:class="tokens.class">
       <div class="token white" v-for="n in tokens.white">
         1

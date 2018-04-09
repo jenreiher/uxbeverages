@@ -405,11 +405,11 @@ new Vue({
       this.type = type;
 
       // Reset set classes
-      this.types.forEach(function(type, index) {
-        type.class = 'type';
-      })
+      for (let type in this.beverages) {
+        this.beverages[type].class = 'type';
+      }
 
-      this.types[index].class = 'type selected';
+      this.beverages[type].class = 'type selected';
 
       this.resetData();
     }
