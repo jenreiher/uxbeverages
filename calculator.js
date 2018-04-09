@@ -352,7 +352,7 @@ new Vue({
     },
   },
   methods: {
-    reset: function(){
+    resetData: function(){
       let defaultData = {
         quantity: "1",
         volumeDrinking: "na",
@@ -364,7 +364,7 @@ new Vue({
           plain: '(You haven\'t done anything yet!)',
         },
         tokens: {
-          net: 'tokens',
+          class: 'tokens',
           white: 0,
           red: 0,
           blue: 0
@@ -411,6 +411,8 @@ new Vue({
       })
 
       this.types[index].class = 'type selected';
+
+      this.resetData();
     }
   },
   computed: {
@@ -456,7 +458,7 @@ new Vue({
             emphasis: 'Take',
             plain: 'from the token stash.'
           }
-          this.tokens.net = 'tokens remove';
+          this.tokens.class = 'tokens remove';
         }
 
         if(worth < 0) {
@@ -464,7 +466,7 @@ new Vue({
             emphasis: 'Add',
             plain: 'to the token stash.'
           }
-          this.tokens.net = 'tokens add'
+          this.tokens.class = 'tokens add'
         }
 
         worth = Math.abs(worth);
