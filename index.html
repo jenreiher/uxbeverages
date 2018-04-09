@@ -15,7 +15,7 @@
       <div class="types flex-container" v-model="type">
         <div 
           v-bind:class="type.class" 
-          v-for="(type, index) in types" 
+          v-for="(type, index) in beverages" 
           v-bind:value="type.value" 
           v-on:click="setType(type.value, index)"
         >
@@ -32,7 +32,10 @@
           <h3><label for="volume">Amount of beverage you plan to consume right now:</label></h3>
           <select class="soflow" name="volumeDrinking" v-model="volumeDrinking">
             <option value="na" selected>N/A</option>
-            <option v-for="option in drinkOptions[this.type]" v-bind:value="option.mL">
+            <option 
+              v-for="option in beverages[this.type].drinkOptions" 
+              v-bind:value="option.mL"
+            >
               {{ option.description}} ({{option.oz}}oz/{{option.mL}}mL)
             </option>
           </select>
@@ -44,7 +47,10 @@
 
         <select class="soflow" name="volumeBuying" v-model="volumeBuying">
           <option value="na" selected>N/A</option>
-          <option v-for="option in buyOptions[this.type]" v-bind:value="option.mL">
+          <option 
+            v-for="option in beverages[this.type].buyOptions" 
+            v-bind:value="option.mL"
+          >
             {{ option.description}} ({{option.oz}}oz/{{option.mL}}mL)
           </option>
         </select>

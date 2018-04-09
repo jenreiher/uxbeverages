@@ -5,44 +5,6 @@ new Vue({
     volumeDrinking: "na",
     volumeBuying: "na",
     type: "beer",
-    types: [
-      {
-        value: 'beer',
-        name: 'Beer',
-        class: 'type',
-        icon: 'dark-beer'
-      },
-      {
-        value: 'wine',
-        name: 'Wine',
-        class: 'type',
-        icon: 'red-wine'
-      },
-      {
-        value: 'cider',
-        name: 'Cider',
-        class: 'type',
-        icon: 'lager-beer'
-      },
-      {
-        value: 'spirit',
-        name: 'Spirit',
-        class: 'type',
-        icon: 'whyskey'
-      },
-      {
-        value: 'highball',
-        name: 'Highball',
-        class: 'type',
-        icon: 'white-russian'
-      },
-      {
-        value: 'nonalcoholic',
-        name: 'Non-alcoholic',
-        class: 'type',
-        icon: 'mojito'
-      },
-    ],
     tokenMsg: {
       emphasis: '',
       plain: '(You haven\'t done anything yet!)',
@@ -54,302 +16,339 @@ new Vue({
       red: 0,
       blue: 0
     },
-    drinkOptions: {
-      beer: [
-        {
-          name: 'canSm',
-          description: 'Small Can',
-          oz: 12.5,
-          mL: 355
+    beverages: {
+      beer: {
+        value: 'beer',
+        name: 'Beer',
+        class: 'type',
+        icon: 'dark-beer',
+        buyOptions: [
+          {
+            name: 'canSm',
+            description: 'Small Can',
+            oz: 12.5,
+            mL: 355
+          },
+          {
+            name: 'canEu',
+            description: 'European Can',
+            oz: 15.5,
+            mL: 440
+          },
+          {
+            name: 'canLg',
+            description: 'Large Can',
+            oz: 16,
+            mL: 473
+          },
+          {
+            name: 'btlEu',
+            description: 'European Bottle',
+            oz: 11.6,
+            mL: 330
+          },
+          {
+            name: 'btlSm',
+            description: 'Small Bottle',
+            oz: 12,
+            mL: 341
+          },
+          {
+            name: 'btlLg',
+            description: 'Large Bottle',
+            oz: 22.9,
+            mL: 650
+          },
+        ],
+        drinkOptions: [
+          {
+            name: 'canSm',
+            description: 'Small Can',
+            oz: 12.5,
+            mL: 355
+          },
+          {
+            name: 'canEu',
+            description: 'European Can',
+            oz: 15.5,
+            mL: 440
+          },
+          {
+            name: 'canLg',
+            description: 'Large Can',
+            oz: 16,
+            mL: 473
+          },
+          {
+            name: 'btlEu',
+            description: 'European Bottle',
+            oz: 11.6,
+            mL: 330
+          },
+          {
+            name: 'btlSm',
+            description: 'Small Bottle',
+            oz: 12,
+            mL: 341
+          },
+          {
+            name: 'btlLg',
+            description: 'Large Bottle',
+            oz: 22.9,
+            mL: 650
+          },
+        ],
+      },
+      wine: {
+        value: 'wine',
+        name: 'Wine',
+        class: 'type',
+        icon: 'red-wine',
+        buyOptions: [
+          {
+            name: 'bottleSm',
+            description: 'Half Bottle',
+            oz: 12.7,
+            mL: 375
+          },
+          {
+            name: 'bottleMd',
+            description: 'Regular Bottle',
+            oz: 32,
+            mL: 750
+          },
+          {
+            name: 'bottleLg',
+            description: 'Magnum Bottle',
+            oz: 50.7,
+            mL: 1500
+          },
+        ],
+        drinkOptions: [
+          {
+            name: 'glassSm',
+            description: 'Small Glass',
+            oz: 6,
+            mL: 177
+          },
+          {
+            name: 'glassLg',
+            description: 'Large Glass',
+            oz: 9,
+            mL: 255
+          },
+        ],
+      },
+      cider: {
+        value: 'cider',
+        name: 'Cider',
+        class: 'type',
+        icon: 'lager-beer',
+        buyOptions: [
+          {
+            name: 'canSm',
+            description: 'Small Can',
+            oz: 12.5,
+            mL: 355
+          },
+          {
+            name: 'canEu',
+            description: 'European Can',
+            oz: 15.5,
+            mL: 440
+          },
+          {
+            name: 'canLg',
+            description: 'Large Can',
+            oz: 16,
+            mL: 473
+          },
+          {
+            name: 'btlEu',
+            description: 'European Bottle',
+            oz: 11.6,
+            mL: 330
+          },
+          {
+            name: 'btlSm',
+            description: 'Small Bottle',
+            oz: 12,
+            mL: 341
+          },
+          {
+            name: 'btlLg',
+            description: 'Large Bottle',
+            oz: 22.9,
+            mL: 650
+          },
+        ],
+        drinkOptions: [
+          {
+            name: 'canSm',
+            description: 'Small Can',
+            oz: 12.5,
+            mL: 355
+          },
+          {
+            name: 'canEu',
+            description: 'European Can',
+            oz: 15.5,
+            mL: 440
+          },
+          {
+            name: 'canLg',
+            description: 'Large Can',
+            oz: 16,
+            mL: 473
+          },
+          {
+            name: 'btlEu',
+            description: 'European Bottle',
+            oz: 11.6,
+            mL: 330
+          },
+          {
+            name: 'btlSm',
+            description: 'Small Bottle',
+            oz: 12,
+            mL: 341
+          },
+        ],
+      },
+      spirit: {
+        value: 'spirit',
+        name: 'Spirit',
+        class: 'type',
+        icon: 'whyskey',
+        buyOptions: [
+          {
+            name: 'btlSm',
+            description: 'Mickey',
+            oz: 12,
+            mL: 355
+          },
+          {
+            name: 'btlMd',
+            description: 'Twenty-Sixer',
+            oz: 25,
+            mL: 750
+          },
+          {
+            name: 'btlLg',
+            description: 'Fourty Ouncer',
+            oz: 40,
+            mL: 1140
+          },
+        ],
+        drinkOptions: [
+          {
+            name: 'shot',
+            description: '2oz shot',
+            oz: 2,
+            mL: 60
+          }
+        ],
+      },
+      highball: {
+        value: 'highball',
+        name: 'Highball',
+        class: 'type',
+        icon: 'white-russian',
+        buyOptions: {
+
         },
-        {
-          name: 'canEu',
-          description: 'European Can',
-          oz: 15.5,
-          mL: 440
-        },
-        {
-          name: 'canLg',
-          description: 'Large Can',
-          oz: 16,
-          mL: 473
-        },
-        {
-          name: 'btlEu',
-          description: 'European Bottle',
-          oz: 11.6,
-          mL: 330
-        },
-        {
-          name: 'btlSm',
-          description: 'Small Bottle',
-          oz: 12,
-          mL: 341
-        },
-        {
-          name: 'btlLg',
-          description: 'Large Bottle',
-          oz: 22.9,
-          mL: 650
-        },
-      ],
-      cider: [
-        {
-          name: 'canSm',
-          description: 'Small Can',
-          oz: 12.5,
-          mL: 355
-        },
-        {
-          name: 'canEu',
-          description: 'European Can',
-          oz: 15.5,
-          mL: 440
-        },
-        {
-          name: 'canLg',
-          description: 'Large Can',
-          oz: 16,
-          mL: 473
-        },
-        {
-          name: 'btlEu',
-          description: 'European Bottle',
-          oz: 11.6,
-          mL: 330
-        },
-        {
-          name: 'btlSm',
-          description: 'Small Bottle',
-          oz: 12,
-          mL: 341
-        },
-      ],
-      wine: [
-        {
-          name: 'glassSm',
-          description: 'Small Glass',
-          oz: 6,
-          mL: 177
-        },
-        {
-          name: 'glassLg',
-          description: 'Large Glass',
-          oz: 9,
-          mL: 255
-        },
-      ],
-      spirit: [
-        {
-          name: 'shot',
-          description: '2oz shot',
-          oz: 2,
-          mL: 60
-        }
-      ],
-      highball: [
-       {
-          name: 'glassShort',
-          description: 'Short Glass',
-          oz: 8,
-          mL: 235
-        },
-      ],
-      nonalcoholic: [
-        {
-          name: 'canSm',
-          description: 'Small Can',
-          oz: 12,
-          mL: 355
-        },
-        {
-          name: 'canMd',
-          description: 'Medium Can',
-          oz: 16,
-          mL: 473
-        },
-        {
-          name: 'canLg',
-          description: 'Large Can',
-          oz: 24,
-          mL: 710
-        },
-        {
-          name: 'glassSm',
-          description: 'Small Glass',
-          oz: 8,
-          mL: 236
-        },
-        {
-          name: 'glassMd',
-          description: 'Medium Glass',
-          oz: 12,
-          mL: 355
-        },
-        {
-          name: 'glassLg',
-          description: 'Large Glass',
-          oz: 16,
-          mL: 473
-        },
-      ],
-    },
-    buyOptions: {
-      beer: [
-        {
-          name: 'canSm',
-          description: 'Small Can',
-          oz: 12.5,
-          mL: 355
-        },
-        {
-          name: 'canEu',
-          description: 'European Can',
-          oz: 15.5,
-          mL: 440
-        },
-        {
-          name: 'canLg',
-          description: 'Large Can',
-          oz: 16,
-          mL: 473
-        },
-        {
-          name: 'btlEu',
-          description: 'European Bottle',
-          oz: 11.6,
-          mL: 330
-        },
-        {
-          name: 'btlSm',
-          description: 'Small Bottle',
-          oz: 12,
-          mL: 341
-        },
-        {
-          name: 'btlLg',
-          description: 'Large Bottle',
-          oz: 22.9,
-          mL: 650
-        },
-      ],
-      cider: [
-        {
-          name: 'canSm',
-          description: 'Small Can',
-          oz: 12.5,
-          mL: 355
-        },
-        {
-          name: 'canEu',
-          description: 'European Can',
-          oz: 15.5,
-          mL: 440
-        },
-        {
-          name: 'canLg',
-          description: 'Large Can',
-          oz: 16,
-          mL: 473
-        },
-        {
-          name: 'btlEu',
-          description: 'European Bottle',
-          oz: 11.6,
-          mL: 330
-        },
-        {
-          name: 'btlSm',
-          description: 'Small Bottle',
-          oz: 12,
-          mL: 341
-        },
-        {
-          name: 'btlLg',
-          description: 'Large Bottle',
-          oz: 22.9,
-          mL: 650
-        },
-      ],
-      wine: [
-        {
-          name: 'bottleSm',
-          description: 'Half Bottle',
-          oz: 12.7,
-          mL: 375
-        },
-        {
-          name: 'bottleMd',
-          description: 'Regular Bottle',
-          oz: 32,
-          mL: 750
-        },
-        {
-          name: 'bottleLg',
-          description: 'Magnum Bottle',
-          oz: 50.7,
-          mL: 1500
-        },
-      ],
-      spirit: [
-        {
-          name: 'btlSm',
-          description: 'Mickey',
-          oz: 12,
-          mL: 355
-        },
-        {
-          name: 'btlMd',
-          description: 'Twenty-Sixer',
-          oz: 25,
-          mL: 750
-        },
-        {
-          name: 'btlLg',
-          description: 'Fourty Ouncer',
-          oz: 40,
-          mL: 1140
-        },
-      ],
-      nonalcoholic: [
-        {
-          name: 'canSm',
-          description: 'Small Can',
-          oz: 12,
-          mL: 355
-        },
-        {
-          name: 'canMd',
-          description: 'Medium Can',
-          oz: 16,
-          mL: 473
-        },
-        {
-          name: 'canLg',
-          description: 'Large Can',
-          oz: 24,
-          mL: 710
-        },
-        {
-          name: 'btlSm',
-          description: 'Small Bottle',
-          oz: 12,
-          mL: 355
-        },
-        {
-          name: 'btlMd',
-          description: 'Medium Bottle',
-          oz: 34,
-          mL: 1000
-        },
-        {
-          name: 'btlLg',
-          description: 'Large Bottle',
-          oz: 68,
-          mL: 2000
-        },
-      ],
-    },
+        drinkOptions: [
+         {
+            name: 'glassShort',
+            description: 'Short Glass',
+            oz: 8,
+            mL: 235
+          },
+        ],
+      },
+      nonalcoholic: {
+        value: 'nonalcoholic',
+        name: 'Non-alcoholic',
+        class: 'type',
+        icon: 'mojito',
+        buyOptions: [
+          {
+            name: 'canSm',
+            description: 'Small Can',
+            oz: 12,
+            mL: 355
+          },
+          {
+            name: 'canMd',
+            description: 'Medium Can',
+            oz: 16,
+            mL: 473
+          },
+          {
+            name: 'canLg',
+            description: 'Large Can',
+            oz: 24,
+            mL: 710
+          },
+          {
+            name: 'btlSm',
+            description: 'Small Bottle',
+            oz: 12,
+            mL: 355
+          },
+          {
+            name: 'btlMd',
+            description: 'Medium Bottle',
+            oz: 34,
+            mL: 1000
+          },
+          {
+            name: 'btlLg',
+            description: 'Large Bottle',
+            oz: 68,
+            mL: 2000
+          },
+        ],
+        drinkOptions: [
+          {
+            name: 'canSm',
+            description: 'Small Can',
+            oz: 12,
+            mL: 355
+          },
+          {
+            name: 'canMd',
+            description: 'Medium Can',
+            oz: 16,
+            mL: 473
+          },
+          {
+            name: 'canLg',
+            description: 'Large Can',
+            oz: 24,
+            mL: 710
+          },
+          {
+            name: 'glassSm',
+            description: 'Small Glass',
+            oz: 8,
+            mL: 236
+          },
+          {
+            name: 'glassMd',
+            description: 'Medium Glass',
+            oz: 12,
+            mL: 355
+          },
+          {
+            name: 'glassLg',
+            description: 'Large Glass',
+            oz: 16,
+            mL: 473
+          },
+        ],
+      },
+    }
   },
   methods: {
     resetData: function(){
