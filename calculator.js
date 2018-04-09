@@ -11,7 +11,7 @@ new Vue({
     },
     total: 0,
     tokens: {
-      net: 'tokens',
+      class: 'tokens',
       white: 0,
       red: 0,
       blue: 0
@@ -478,6 +478,11 @@ new Vue({
       let white = 1;
       let red = 5;
       let blue = 10;
+
+      // Reset set existing tokens, because we've started again
+      this.tokens.white = 0;
+      this.tokens.red = 0;
+      this.tokens.blue = 0;
 
       function calcRemainder(remainder, tokenValue) {
         return remainder % tokenValue;
