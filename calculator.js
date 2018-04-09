@@ -356,7 +356,6 @@ new Vue({
         quantity: "1",
         volumeDrinking: "na",
         volumeBuying: "na",
-        type: "beer",
         total: 0,
         tokenMsg: {
           emphasis: '',
