@@ -5,9 +5,11 @@
 
 <div id="app">
   <div class="calculator section">
-    <h1>UXBeverage Token Calculator</h1>
+    <div class="header wrapper">
+      <h1>UXBeverage Token Calculator</h1>
+    </div>
 
-    <div class="input-wrapper">
+    <div class="input wrapper type-selection">
       <h2>Whatcha Got?</h2>
       <h3><label for="quantity">Type of Liquid:</label></h3>   
       <div class="types flex-container" v-model="type">
@@ -23,7 +25,7 @@
       </div>
     </div>
 
-    <div class="input-wrapper">
+    <div class="input wrapper">
       <div class="flex-container">
         <div class="flex-child">
           <h2>Whatcha Drinking?</h2>
@@ -65,7 +67,7 @@
     </div>
 </div>
 
-<div class="output section">
+<div class="output section wrapper">
   <h1>
     <span v-if="tokenMsg.emphasis">
       <em>{{ tokenMsg.emphasis }}</em>

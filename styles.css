@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:500,500i,600, 600i, 700,700i');
 
 :root {
-  --accentColor: #FFC300;
+  --accentColor: #58c1c5;
+  --backgroundColor: #fbea9b;
 }
 
 html, body {
@@ -22,19 +23,19 @@ h3 {
 }
 
 .section {
-    padding: 25px 40px;
+    padding: 25px 0px;
 }
 
 h2 label {
   margin-top: 0;
 }
 
-.input-wrapper {
-  display: block;
-  margin: 25px 0px;
-  padding: 0 15px 20px 15px;
-  background-color: #eee;
-  border: 1px solid #666;
+.type-selection {
+  background-color: var(--backgroundColor);
+}
+
+.wrapper {
+  padding: 20px 45px;
 }
 
 select {
@@ -50,7 +51,6 @@ h3 {
 
 .output {
   background-color: var(--accentColor);
-  border: 1px solid #666;
 }
 
 .tokens {
