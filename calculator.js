@@ -20,7 +20,7 @@ new Vue({
       beer: {
         value: 'beer',
         name: 'Beer',
-        class: 'type',
+        class: 'type selected',
         icon: 'dark-beer',
         buyOptions: [
           {
