@@ -7,7 +7,7 @@ new Vue({
     type: "beer",
     tokenMsg: {
       emphasis: '',
-      plain: '(You haven\'t done anything yet!)',
+      plain: 'Select a type of beverage, and either what you are drinking, what you are buying, or both!,
     },
     total: 0,
     tokens: {
