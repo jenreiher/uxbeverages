@@ -30,11 +30,11 @@
         <div class="flex-child">
           <h2>Whatcha Drinking?</h2>
           <h3><label for="volume">Amount of beverage you plan to consume right now:</label></h3>
-          <select class="soflow" name="volumeDrinking" v-model="volumeDrinking">
-            <option value="na" selected>N/A</option>
+          <select class="soflow" name="drinkValue" v-model="drinkValue">
+            <option value="0" selected>N/A</option>
             <option 
               v-for="option in beverages[this.type].drinkOptions" 
-              v-bind:value="option.mL"
+              v-bind:value="option.value"
             >
               {{ option.description}} ({{option.oz}}oz/{{option.mL}}mL)
             </option>
@@ -45,11 +45,11 @@
         <h2>Whatcha Bought?</h2>
         <h3><label for="volume">Type of bottle/can contributing:</label></h3>
 
-        <select class="soflow" name="volumeBuying" v-model="volumeBuying">
-          <option value="na" selected>N/A</option>
+        <select class="soflow" name="buyValue" v-model="buyValue">
+          <option value="0" selected>N/A</option>
           <option 
             v-for="option in beverages[this.type].buyOptions" 
-            v-bind:value="option.mL"
+            v-bind:value="option.value"
           >
             {{ option.description}} ({{option.oz}}oz/{{option.mL}}mL)
           </option>
@@ -93,10 +93,10 @@
         1
       </div>
       <div class="token red"  v-for="n in tokens.red">
-        5
+        2
       </div>
       <div class="token blue"  v-for="n in tokens.blue">
-        10
+        5
       </div>
     </div>
   </div>
