@@ -99,7 +99,7 @@ h3 {
   flex-basis: 50%;
 }
 
-@media (max-width: 600px) {
+@media screen and (max-device-width: 480px) and (orientation: portrait) {
   .flex-child {
     flex-basis: 100%;
     margin-bottom: 20px;
@@ -131,6 +131,21 @@ h3 {
   height: 50px;
   width: auto;
 }
+
+/* Make the type icons bigger on phones */
+@media screen and (max-device-width: 480px) and (orientation: portrait) {
+  .type {
+    font-size: 20px;
+    height: 145px;
+    width: 200px;
+  }
+
+  .type img {
+    height: 100px;
+    width: auto;
+  }
+}
+
 
 .type.selected {
   border: 3px solid var(--accentColor);
