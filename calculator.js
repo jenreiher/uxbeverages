@@ -210,7 +210,8 @@ new Vue({
             name: 'canSm',
             description: 'Small Can',
             oz: 12.5,
-            mL: 355
+            mL: 355,
+            value: 2
           },
           {
             name: 'canEu',
@@ -259,14 +260,15 @@ new Vue({
             name: 'btlMd',
             description: 'Twenty-Sixer',
             oz: 25,
-            mL: 25
+            mL: 739,
+            value: 25
           },
           {
             name: 'btlLg',
             description: 'Fourty Ouncer',
             oz: 40,
             mL: 1140,
-            value: 20
+            value: 40
           },
         ],
         drinkOptions: [
