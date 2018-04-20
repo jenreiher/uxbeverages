@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <head>
     <script src="https://unpkg.com/vue"></script>
     <link rel="stylesheet" href="styles.css">
@@ -12,7 +13,7 @@
     <div class="input wrapper type-selection">
       <h2>Whatcha Got?</h2>
       <h3><label for="quantity">Type of Liquid:</label></h3>   
-      <div class="types flex-container" v-model="type">
+      <div class="types flex-container" v-bind:class="type">
         <div 
           v-bind:class="type.class" 
           v-for="(type, index) in beverages" 
@@ -28,9 +29,9 @@
     <div class="input wrapper">
       <div class="flex-container">
         <div class="flex-child">
-          <h2>Whatcha Drinking?</h2>
+          <h2 id="header-watcha-drinking">Whatcha Drinking?</h2>
           <h3><label for="volume">Amount of beverage you plan to consume right now:</label></h3>
-          <select class="soflow" name="drinkValue" v-model="drinkValue">
+          <select class="soflow" name="drinkValue" v-model="drinkValue" v-on:change="goTo('header-tokens')" >
             <option value="0" selected>N/A</option>
             <option 
               v-for="option in beverages[this.type].drinkOptions" 
@@ -42,7 +43,7 @@
         </div>
 
       <div class="flex-child">
-        <h2>Whatcha Bought?</h2>
+        <h2 id="header-watcha-bought">Whatcha Bought?</h2>
         <h3><label for="volume">Type of bottle/can contributing:</label></h3>
 
         <select class="soflow" name="buyValue" v-model="buyValue">
@@ -75,7 +76,7 @@
 </div>
 
 <div class="output section wrapper">
-  <h1>
+  <h1 id="header-tokens">
     <span v-if="tokenMsg.emphasis">
       <em>{{ tokenMsg.emphasis }}</em>
     </span>

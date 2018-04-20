@@ -437,6 +437,8 @@ new Vue({
       this.beverages[type].class = 'type selected';
 
       this.resetData();
+
+      this.goTo('header-watcha-drinking');
     },
     getBeverageValue(drinkValue, transactionType) {
       let total = 0;
@@ -445,6 +447,9 @@ new Vue({
 
       total = drinkValue * quantityBuying;
       return total;
+    },
+    goTo(id) {
+      window.location.href=window.location.pathname + '#' + id;
     },
   },
   computed: {
