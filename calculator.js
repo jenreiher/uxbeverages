@@ -122,21 +122,21 @@ new Vue({
             description: 'Half Bottle',
             oz: 12.7,
             mL: 375,
-            value: 2
+            value: 4
           },
           {
             name: 'bottleMd',
             description: 'Regular Bottle',
             oz: 32,
             mL: 750,
-            value: 4
+            value: 10
           },
           {
             name: 'bottleLg',
             description: 'Magnum Bottle',
             oz: 50.7,
             mL: 1500,
-            value: 8
+            value: 15
           },
         ],
         drinkOptions: [
@@ -145,14 +145,14 @@ new Vue({
             description: 'Small Glass',
             oz: 6,
             mL: 177,
-            value: 1
+            value: 2
           },
           {
             name: 'glassLg',
             description: 'Large Glass',
             oz: 9,
-            mL: 255,
-            value: 2
+            mL: 266,
+            value: 3
           },
         ],
       },
