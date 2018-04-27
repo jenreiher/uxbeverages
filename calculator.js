@@ -277,7 +277,7 @@ new Vue({
             description: '1oz shot',
             oz: 1,
             mL: 30,
-            value: 1
+            value: 2
           },
           {
             name: 'shotLg',
