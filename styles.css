@@ -54,18 +54,11 @@ h3 {
 
 .output {
   background-color: var(--accentColor);
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   box-shadow: -10px 14px 25px -10px rgba(0, 0, 0, 0.2);
 }
-
-/* Add extra top to the mobile version to account for the browser header */
-@media screen and (max-device-width: 480px) and (orientation: portrait) {
-  .output{
-    top: 15px;
-  }
-}
-
 
 .tokens {
   display: flex;
