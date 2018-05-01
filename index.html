@@ -29,13 +29,13 @@
       <div class="total" v-bind="tokenBreakdown" v-if="calculateTokens != 0">
         <div v-bind:class="tokens.class">
           <div class="token white" v-for="n in tokens.white">
-            1
+            $1
           </div>
           <div class="token red"  v-for="n in tokens.red">
-            2
+            $2
           </div>
           <div class="token blue"  v-for="n in tokens.blue">
-            5
+            $5
           </div>
         </div>
       </div>
