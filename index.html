@@ -16,7 +16,7 @@
     <div class="output section wrapper is-sticky">
       <h2>
         <span v-if="tokenMsg.emphasis">
-          For your {{type}}, <em>{{ tokenMsg.emphasis }}</em>
+          For your {{beverages[type].name.toLowerCase()}}, <em>{{ tokenMsg.emphasis }}</em>
         </span>
         <span v-if="calculateTokens != 0">
           {{ calculateTokens }} token<span v-if="calculateTokens > 1">s</span>

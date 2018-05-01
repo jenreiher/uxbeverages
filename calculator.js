@@ -158,7 +158,7 @@ new Vue({
       },
       cider: {
         value: 'cider',
-        name: 'Cider & Coolers',
+        name: 'Cider or Coolers',
         class: 'type',
         icon: 'lager-beer',
         buyOptions: [
@@ -308,7 +308,7 @@ new Vue({
       },
       nonalcoholic: {
         value: 'nonalcoholic',
-        name: 'Non-alcoholic',
+        name: 'Non-alcoholic Beverage',
         class: 'type',
         icon: 'mojito',
         buyOptions: [
