@@ -68,11 +68,14 @@ h3 {
   font-style: italic;
 }
 
-.output {
-  background-color: var(--accentColor);
+.is-sticky {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+}
+
+.output {
+  background-color: var(--accentColor);
   box-shadow: -10px 14px 25px -10px rgba(0, 0, 0, 0.2);
 }
 

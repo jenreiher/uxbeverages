@@ -475,7 +475,7 @@ new Vue({
 
         if(worth > 0) {
           this.tokenMsg = {
-            emphasis: 'Take',
+            emphasis: 'take',
             plain: 'worth from the token stash.'
           }
           this.tokens.class = 'tokens remove';
@@ -483,7 +483,7 @@ new Vue({
 
         if(worth < 0) {
           this.tokenMsg = {
-            emphasis: 'Add',
+            emphasis: 'add',
             plain: 'worth to the token stash.'
           }
           this.tokens.class = 'tokens add'
