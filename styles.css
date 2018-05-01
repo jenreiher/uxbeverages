@@ -14,6 +14,7 @@ html, body {
 
 h1 {
   font-weight: 700;
+  font-size: 2.5em;
 }
 
 h2 {
@@ -37,7 +38,7 @@ h2 label {
 }
 
 .wrapper {
-  padding: 20px 45px;
+  padding: 20px 35px 35px;
 }
 
 select {
@@ -53,6 +54,9 @@ h3 {
 
 .output {
   background-color: var(--accentColor);
+  position: sticky;
+  top: 0;
+  box-shadow: -10px 14px 25px -10px rgba(0, 0, 0, 0.2);
 }
 
 .tokens {
@@ -173,6 +177,14 @@ select.soflow {
    text-overflow: ellipsis;
    white-space: nowrap;
    width: 300px;
+}
+
+/* Make the inputs bigger on phones */
+@media screen and (max-device-width: 480px) and (orientation: portrait) {
+  select.soflow {
+    padding: 15px 30px;
+    width: 80%;
+  }
 }
 
 select.soflow:focus {

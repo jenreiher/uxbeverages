@@ -12,6 +12,34 @@
       <h1>Beneverages Token Calculator</h1>
     </div>
 
+    <div class="output section wrapper">
+      <h2>
+        <span v-if="tokenMsg.emphasis">
+          <em>{{ tokenMsg.emphasis }}</em>
+        </span>
+        <span v-if="calculateTokens != 0">
+          {{ calculateTokens }} token<span v-if="calculateTokens > 1">s</span>
+        </span>
+        <span v-if="tokenMsg.plain">
+          {{ tokenMsg.plain }}
+        </span>
+      </h2>
+
+      <div class="total" v-bind="tokenBreakdown" v-if="calculateTokens != 0">
+        <div v-bind:class="tokens.class">
+          <div class="token white" v-for="n in tokens.white">
+            1
+          </div>
+          <div class="token red"  v-for="n in tokens.red">
+            2
+          </div>
+          <div class="token blue"  v-for="n in tokens.blue">
+            5
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="input wrapper type-selection">
       <h2>Whatcha Got?</h2>
       <h3><label for="quantity">Type of Liquid:</label></h3>   
@@ -75,34 +103,6 @@
         </select>
       </div>
     </div>
-</div>
-
-<div class="output section wrapper">
-  <h1>
-    <span v-if="tokenMsg.emphasis">
-      <em>{{ tokenMsg.emphasis }}</em>
-    </span>
-    <span v-if="calculateTokens != 0">
-      {{ calculateTokens }} token<span v-if="calculateTokens > 1">s</span>
-    </span>
-    <span v-if="tokenMsg.plain">
-      {{ tokenMsg.plain }}
-    </span>
-  </h1>
-
-  <div class="total" v-bind="tokenBreakdown" v-if="calculateTokens != 0">
-    <div v-bind:class="tokens.class">
-      <div class="token white" v-for="n in tokens.white">
-        1
-      </div>
-      <div class="token red"  v-for="n in tokens.red">
-        2
-      </div>
-      <div class="token blue"  v-for="n in tokens.blue">
-        5
-      </div>
-    </div>
-  </div>
 </div>
 
 <script src="./calculator.js"></script>
