@@ -436,6 +436,14 @@ new Vue({
 
       this.beverages[type].class = 'type selected';
 
+      if( screen.width <= 600 ) {
+        // Jump down the page to the selection for ease of mobile scrolling
+        document.getElementById("amount-selection").scrollIntoView({behaviour:"smooth"});
+        // This adjust for our sticky header
+        window.scrollBy(0, -200);
+      }
+
+
       this.resetData();
     },
     getBeverageValue(drinkValue, transactionType) {
