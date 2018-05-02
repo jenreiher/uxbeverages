@@ -254,29 +254,24 @@ function DrinkSize(name, desc, value, unit, size, mL) {
   this.name = name;
   this.description = desc;
   this.value = value;
-  var fmtmL = function (mL) {
-    if (mL >= 1000) {
-      // Ensure up to 2 decimal places.
-      return (Math.round(mL / 10) / 100) + ' L';
-    }
-    return mL + ' mL';
-  }
   switch(unit) {
     case 'oz':
-      this.size = size + ' oz';
-      return;
     case 'mL':
-      this.size = size + ' mL';
-      return;
     case 'L':
-      this.size = size + ' L';
+      this.size = size + ' ' + unit;
       return;
     case 'both':
       if (!mL) {
         // Unit conversion for US fluid ounce.
         mL = Math.round(size * 29.57353);
       }
-      this.size = size + ' oz/' + fmtmL(mL);
+      if (mL >= 1000) {
+        // Ensure there are no more than 2 decimal places.
+        mL = (Math.round(mL / 10) / 100) + ' L';
+      } else {
+        mL += ' mL';
+      }
+      this.size = size + ' oz/' + mL;
       return;
     default:
       throw "'" + unit + "' is not a valid unit preference in drink size.";
