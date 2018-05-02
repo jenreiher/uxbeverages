@@ -81,6 +81,8 @@ h3 {
 
 .tokens {
   display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .token {
@@ -108,8 +110,12 @@ h3 {
   background-color: white;
 }
 
-.add .token {
-  mix-blend-mode: soft-light;
+img.arrow {
+  margin: 25px;
+}
+
+.add > img.arrow {
+    transform: rotate(180deg);
 }
 
 .flex-container {
