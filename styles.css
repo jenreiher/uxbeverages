@@ -156,9 +156,7 @@ h3 {
   }
 }
 
-
 .type.selected {
   border: 3px solid var(--accentColor);
   box-shadow: inset 0px 0px 75px 7px var(--accentColor);
 }
-
