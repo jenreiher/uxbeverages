@@ -1,3 +1,4 @@
+
 new Vue({
   el: '#app',
   data: {
@@ -23,92 +24,20 @@ new Vue({
         class: 'type selected',
         icon: 'dark-beer',
         buyOptions: [
-          {
-            name: 'canSm',
-            description: 'Small Can',
-            oz: 12.5,
-            mL: 355,
-            value: 2
-          },
-          {
-            name: 'canEu',
-            description: 'European Can',
-            oz: 15.5,
-            mL: 440,
-            value: 2
-          },
-          {
-            name: 'canLg',
-            description: 'Large Can',
-            oz: 16,
-            mL: 473,
-            value: 3
-          },
-          {
-            name: 'btlEu',
-            description: 'European Bottle',
-            oz: 11.6,
-            mL: 330,
-            value: 2
-          },
-          {
-            name: 'btlSm',
-            description: 'Small Bottle',
-            oz: 12,
-            mL: 341,
-            value: 2
-          },
-          {
-            name: 'btlLg',
-            description: 'Large Bottle',
-            oz: 22.9,
-            mL: 650,
-            value: 4
-          },
+          new DrinkSize('canSm', 'Small can', 2, 'both', 12),
+          new DrinkSize('canEu', 'European can', 2, 'mL', 440),
+          new DrinkSize('canLg', 'Large can', 3, 'oz', 16),
+          new DrinkSize('btlEu', 'European bottle', 2, 'mL', 330),
+          new DrinkSize('btlSm', 'Small bottle', 2, 'both', 12, 341),
+          new DrinkSize('btlLg', 'Bomber', 4, 'mL', 650),
         ],
         drinkOptions: [
-          {
-            name: 'canSm',
-            description: 'Small Can',
-            oz: 12.5,
-            mL: 355,
-            value: 2
-          },
-          {
-            name: 'canEu',
-            description: 'European Can',
-            oz: 15.5,
-            mL: 440,
-            value: 2
-          },
-          {
-            name: 'canLg',
-            description: 'Large Can',
-            oz: 16,
-            mL: 473,
-            value: 3
-          },
-          {
-            name: 'btlEu',
-            description: 'European Bottle',
-            oz: 11.6,
-            mL: 330,
-            value: 2
-          },
-          {
-            name: 'btlSm',
-            description: 'Small Bottle',
-            oz: 12,
-            mL: 341,
-            value: 2
-          },
-          {
-            name: 'btlLg',
-            description: 'Large Bottle',
-            oz: 22.9,
-            mL: 650,
-            value: 4
-          },
+          new DrinkSize('canSm', 'Small can', 2, 'both', 12),
+          new DrinkSize('canEu', 'European can', 2, 'mL', 440),
+          new DrinkSize('canLg', 'Large can', 3, 'oz', 16),
+          new DrinkSize('btlEu', 'European bottle', 2, 'mL', 330),
+          new DrinkSize('btlSm', 'Small bottle', 2, 'both', 12, 341),
+          new DrinkSize('btlLg', 'Bomber', 4, 'mL', 650),
         ],
       },
       wine: {
@@ -117,43 +46,13 @@ new Vue({
         class: 'type',
         icon: 'red-wine',
         buyOptions: [
-          {
-            name: 'bottleSm',
-            description: 'Half Bottle',
-            oz: 12.7,
-            mL: 375,
-            value: 4
-          },
-          {
-            name: 'bottleMd',
-            description: 'Regular Bottle',
-            oz: 32,
-            mL: 750,
-            value: 10
-          },
-          {
-            name: 'bottleLg',
-            description: 'Magnum Bottle',
-            oz: 50.7,
-            mL: 1500,
-            value: 15
-          },
+          new DrinkSize('bottleSm', 'Half bottle', 4, 'mL', 375),
+          new DrinkSize('bottleMd', 'Regular bottle', 10, 'mL', 750),
+          new DrinkSize('bottleLg', 'Magnum bottle', 18, 'L', 1.5),
         ],
         drinkOptions: [
-          {
-            name: 'glassSm',
-            description: 'Small Glass',
-            oz: 6,
-            mL: 177,
-            value: 2
-          },
-          {
-            name: 'glassLg',
-            description: 'Large Glass',
-            oz: 9,
-            mL: 266,
-            value: 3
-          },
+          new DrinkSize('glassSm', 'Small glass', 2, 'oz', 6),
+          new DrinkSize('glassTl', 'Tall glass', 3, 'oz', 9),
         ],
       },
       cider: {
@@ -162,85 +61,20 @@ new Vue({
         class: 'type',
         icon: 'lager-beer',
         buyOptions: [
-          {
-            name: 'canSm',
-            description: 'Small Can',
-            oz: 12.5,
-            mL: 355,
-            value: 2
-          },
-          {
-            name: 'canEu',
-            description: 'European Can',
-            oz: 15.5,
-            mL: 440,
-            value: 2
-          },
-          {
-            name: 'canLg',
-            description: 'Large Can',
-            oz: 16,
-            mL: 473,
-            value: 3
-          },
-          {
-            name: 'btlEu',
-            description: 'European Bottle',
-            oz: 11.6,
-            mL: 330,
-            value: 2
-          },
-          {
-            name: 'btlSm',
-            description: 'Small Bottle',
-            oz: 12,
-            mL: 341,
-            value: 2
-          },
-          {
-            name: 'btlLg',
-            description: 'Large Bottle',
-            oz: 22.9,
-            mL: 650,
-            value: 4
-          },
+          new DrinkSize('canSm', 'Small can', 2, 'both', 12),
+          new DrinkSize('canEu', 'European can', 2, 'mL', 440),
+          new DrinkSize('canLg', 'Large can', 3, 'oz', 16),
+          new DrinkSize('btlEu', 'European bottle', 2, 'mL', 330),
+          new DrinkSize('btlSm', 'Small bottle', 2, 'both', 12, 341),
+          new DrinkSize('btlLg', 'Bomber', 4, 'mL', 650),
         ],
         drinkOptions: [
-          {
-            name: 'canSm',
-            description: 'Small Can',
-            oz: 12.5,
-            mL: 355,
-            value: 2
-          },
-          {
-            name: 'canEu',
-            description: 'European Can',
-            oz: 15.5,
-            mL: 440,
-            value: 2
-          },
-          {
-            name: 'canLg',
-            description: 'Large Can',
-            oz: 16,
-            mL: 473,
-            value: 3
-          },
-          {
-            name: 'btlEu',
-            description: 'European Bottle',
-            oz: 11.6,
-            mL: 330,
-            value: 2
-          },
-          {
-            name: 'btlSm',
-            description: 'Small Bottle',
-            oz: 12,
-            mL: 341,
-            value: 2
-          },
+          new DrinkSize('canSm', 'Small can', 2, 'both', 12),
+          new DrinkSize('canEu', 'European can', 2, 'mL', 440),
+          new DrinkSize('canLg', 'Large can', 3, 'oz', 16),
+          new DrinkSize('btlEu', 'European bottle', 2, 'mL', 330),
+          new DrinkSize('btlSm', 'Small bottle', 2, 'both', 12, 341),
+          new DrinkSize('btlLg', 'Bomber', 4, 'mL', 650),
         ],
       },
       spirit: {
@@ -249,43 +83,13 @@ new Vue({
         class: 'type',
         icon: 'whyskey',
         buyOptions: [
-          {
-            name: 'btlSm',
-            description: 'Mickey',
-            oz: 12,
-            mL: 355,
-            value: 12
-          },
-          {
-            name: 'btlMd',
-            description: 'Twenty-Sixer',
-            oz: 25,
-            mL: 739,
-            value: 25
-          },
-          {
-            name: 'btlLg',
-            description: 'Fourty Ouncer',
-            oz: 40,
-            mL: 1140,
-            value: 40
-          },
+          new DrinkSize('btlSm', 'Mickey', 13, 'both', 13, 375),
+          new DrinkSize('btlMd', 'Twenty-Sixer', 26, 'both', 26, 750),
+          new DrinkSize('btlMd', 'Fourty Ouncer', 40, 'both', 40, 1150),
         ],
         drinkOptions: [
-          {
-            name: 'shotSm',
-            description: '1oz shot',
-            oz: 1,
-            mL: 30,
-            value: 2
-          },
-          {
-            name: 'shotLg',
-            description: '2oz shot',
-            oz: 2,
-            mL: 60,
-            value: 4
-          },
+          new DrinkSize('shotSm', '1 oz shot', 2, 'oz', 1),
+          new DrinkSize('shotLg', '2 oz shot', 4, 'oz', 2),
         ],
       },
       highball: {
@@ -293,17 +97,10 @@ new Vue({
         name: 'Highball',
         class: 'type',
         icon: 'white-russian',
-        buyOptions: {
-
-        },
+        buyOptions: {},
         drinkOptions: [
-         {
-            name: 'glassShort',
-            description: '2oz spirit, short glass',
-            oz: 8,
-            mL: 235,
-            value: 5
-          },
+          new DrinkSize('glassSgl', 'Single', 3, 'oz', 4),
+          new DrinkSize('glassDbl', 'Double', 5, 'oz', 8),
         ],
       },
       nonalcoholic: {
@@ -312,92 +109,20 @@ new Vue({
         class: 'type',
         icon: 'mojito',
         buyOptions: [
-          {
-            name: 'canSm',
-            description: 'Small Can',
-            oz: 12,
-            mL: 355,
-            value: 1
-          },
-          {
-            name: 'canMd',
-            description: 'Medium Can',
-            oz: 16,
-            mL: 473,
-            value: 1
-          },
-          {
-            name: 'canLg',
-            description: 'Large Can',
-            oz: 24,
-            mL: 710,
-            value: 2
-          },
-          {
-            name: 'btlSm',
-            description: 'Small Bottle',
-            oz: 12,
-            mL: 355,
-            value: 1
-          },
-          {
-            name: 'btlMd',
-            description: 'Medium Bottle',
-            oz: 34,
-            mL: 1000,
-            value: 3
-          },
-          {
-            name: 'btlLg',
-            description: 'Large Bottle',
-            oz: 68,
-            mL: 2000,
-            value: 6
-          },
+          new DrinkSize('canSm', 'Small can', 1, 'both', 12),
+          new DrinkSize('canMd', 'Medium can', 1, 'both', 16),
+          new DrinkSize('canLg', 'Large can', 2, 'both', 24),
+          new DrinkSize('btlSm', 'Small bottle', 1, 'mL', 500),
+          new DrinkSize('btlMd', 'Medium bottle', 2, 'L', 1),
+          new DrinkSize('btlLg', 'Large bottle', 4, 'L', 2),
         ],
         drinkOptions: [
-          {
-            name: 'canSm',
-            description: 'Small Can',
-            oz: 12,
-            mL: 355,
-            value: 1
-          },
-          {
-            name: 'canMd',
-            description: 'Medium Can',
-            oz: 16,
-            mL: 473,
-            value: 1
-          },
-          {
-            name: 'canLg',
-            description: 'Large Can',
-            oz: 24,
-            mL: 710,
-            value: 1
-          },
-          {
-            name: 'glassSm',
-            description: 'Small Glass',
-            oz: 8,
-            mL: 236,
-            value: 1
-          },
-          {
-            name: 'glassMd',
-            description: 'Medium Glass',
-            oz: 12,
-            mL: 355,
-            value: 1
-          },
-          {
-            name: 'glassLg',
-            description: 'Large Glass',
-            oz: 16,
-            mL: 473,
-            value: 1
-          },
+          new DrinkSize('canSm', 'Small can', 1, 'both', 12),
+          new DrinkSize('canMd', 'Medium can', 1, 'both', 16),
+          new DrinkSize('canLg', 'Large can', 2, 'both', 24),
+          new DrinkSize('glassSm', 'Small glass', 1, 'oz', 8),
+          new DrinkSize('glassMd', 'Medium glass', 1, 'oz', 12),
+          new DrinkSize('glassLg', 'Large', 2, 'oz', 16),
         ],
       },
     }
@@ -518,3 +243,43 @@ new Vue({
     },
   },
 });
+
+// This constructor returns a drink size object, optionally allowing you to
+// override the mL calculation.
+// unit can be one of 'oz', 'mL', 'L', or 'both'. If 'both' is specified, and
+// a second size parameter (the mL parameter, size is assumed to be oz) isn't
+// given, it will be calculated.
+// The oz unit is assumed to be US fluid ounces.
+function DrinkSize(name, desc, value, unit, size, mL) {
+  this.name = name;
+  this.description = desc;
+  this.value = value;
+  var fmtmL = function (mL) {
+    if (mL >= 1000) {
+      // Ensure up to 2 decimal places.
+      return (Math.round(mL / 10) / 100) + ' L';
+    }
+    return mL + ' mL';
+  }
+  switch(unit) {
+    case 'oz':
+      this.size = size + ' oz';
+      return;
+    case 'mL':
+      this.size = size + ' mL';
+      return;
+    case 'L':
+      this.size = size + ' L';
+      return;
+    case 'both':
+      if (!mL) {
+        // Unit conversion for US fluid ounce.
+        mL = Math.round(size * 29.57353);
+      }
+      this.size = size + ' oz/' + fmtmL(mL);
+      return;
+    default:
+      throw "'" + unit + "' is not a valid unit preference in drink size.";
+  }
+}
+

@@ -34,12 +34,12 @@
           <h2>Whatcha Drinking?</h2>
           <h3><label for="volume">Amount of beverage you plan to consume right now:</label></h3>
           <select class="soflow" name="drinkValue" v-model="drinkValue">
-            <option value="0" selected>N/A</option>
+            <option value="0" selected>--</option>
             <option 
               v-for="option in beverages[this.type].drinkOptions" 
               v-bind:value="option.value"
             >
-              {{ option.description}} ({{option.oz}}oz/{{option.mL}}mL)
+              {{ option.description }} ({{ option.size }})
             </option>
           </select>
         </div>
@@ -49,12 +49,12 @@
         <h3><label for="volume">Type of bottle/can contributing:</label></h3>
 
         <select class="soflow" name="buyValue" v-model="buyValue">
-          <option value="0" selected>N/A</option>
+          <option value="0" selected>--</option>
           <option 
             v-for="option in beverages[this.type].buyOptions" 
             v-bind:value="option.value"
           >
-            {{ option.description}} ({{option.oz}}oz/{{option.mL}}mL)
+            {{ option.description }} ({{ option.size }})
           </option>
         </select>
 
