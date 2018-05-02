@@ -40,10 +40,17 @@ h2 label {
   padding: 20px 45px;
 }
 
-select {
-  display: block;
-  margin: 5px 0;
-  width: 150px;
+input, select {
+  border: 3px solid var(--accentColor);
+  border-radius: 2px;
+  box-shadow: 0px 0px 7px #b9b9b9;
+  background: linear-gradient(#fafafa, #f4f4f4 40%, #e5e5e5);
+  color: var(--font-color);
+  font-size: inherit;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+  padding: 1.5px 7px;
+  width: 300px;
 }
 
 h3 {
@@ -96,6 +103,9 @@ h3 {
 }
 
 .flex-child {
+  box-sizing: border-box;
+  /* Prevents the text from running into eachother */
+  padding: 0 20px;
   flex-basis: 50%;
 }
 
@@ -152,29 +162,3 @@ h3 {
   box-shadow: inset 0px 0px 75px 7px var(--accentColor);
 }
 
-/* -------------------- Select Box Styles: stackoverflow.com Method */
-/* -------------------- Source: http://stackoverflow.com/a/5809186 */
-select.soflow {
-   -webkit-appearance: button;
-   -webkit-border-radius: 2px;
-   -webkit-box-shadow: 0px 0px 7px #b9b9b9;
-   -webkit-padding-end: 20px;
-   -webkit-padding-start: 2px;
-   -webkit-user-select: none;
-   background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
-   background-position: 97% center;
-   background-repeat: no-repeat;
-   border: 3px solid var(--accentColor);
-   color: var(--font-color);
-   font-size: inherit;
-   margin: 20px 0;
-   overflow: hidden;
-   padding: 5px 10px;
-   text-overflow: ellipsis;
-   white-space: nowrap;
-   width: 300px;
-}
-
-select.soflow:focus {
-  border: 3px solid var(--font-color);
-}
