@@ -158,7 +158,7 @@ new Vue({
       },
       cider: {
         value: 'cider',
-        name: 'Cider',
+        name: 'Cider or Coolers',
         class: 'type',
         icon: 'lager-beer',
         buyOptions: [
@@ -308,7 +308,7 @@ new Vue({
       },
       nonalcoholic: {
         value: 'nonalcoholic',
-        name: 'Non-alcoholic',
+        name: 'Non-alcoholic Beverage',
         class: 'type',
         icon: 'mojito',
         buyOptions: [
@@ -436,6 +436,14 @@ new Vue({
 
       this.beverages[type].class = 'type selected';
 
+      if( screen.width <= 600 ) {
+        // Jump down the page to the selection for ease of mobile scrolling
+        document.getElementById("amount-selection").scrollIntoView({behaviour:"smooth"});
+        // This adjust for our sticky header
+        window.scrollBy(0, -200);
+      }
+
+
       this.resetData();
     },
     getBeverageValue(drinkValue, transactionType) {
@@ -467,7 +475,7 @@ new Vue({
 
         if(worth > 0) {
           this.tokenMsg = {
-            emphasis: 'Take',
+            emphasis: 'take',
             plain: 'worth from the token stash.'
           }
           this.tokens.class = 'tokens remove';
@@ -475,7 +483,7 @@ new Vue({
 
         if(worth < 0) {
           this.tokenMsg = {
-            emphasis: 'Add',
+            emphasis: 'add',
             plain: 'worth to the token stash.'
           }
           this.tokens.class = 'tokens add'

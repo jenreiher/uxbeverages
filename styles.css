@@ -14,6 +14,13 @@ html, body {
 
 h1 {
   font-weight: 700;
+  font-size: 2.5em;
+}
+
+@media screen and (max-device-width: 480px) and (orientation: portrait) {
+  h1 {
+      font-size: 2em;
+  }
 }
 
 h2 {
@@ -28,6 +35,10 @@ h3 {
     padding: 25px 0px;
 }
 
+.section:first-of-type {
+  padding-top: 0;
+}
+
 h2 label {
   margin-top: 0;
 }
@@ -37,7 +48,13 @@ h2 label {
 }
 
 .wrapper {
-  padding: 20px 45px;
+  padding: 20px 35px 35px;
+}
+
+@media screen and (max-device-width: 480px) and (orientation: portrait) {
+  .wrapper {
+    padding: 15px 30px;
+  }
 }
 
 select {
@@ -51,12 +68,21 @@ h3 {
   font-style: italic;
 }
 
+.is-sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
 .output {
   background-color: var(--accentColor);
+  box-shadow: -10px 14px 25px -10px rgba(0, 0, 0, 0.2);
 }
 
 .tokens {
   display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .token {
@@ -64,7 +90,7 @@ h3 {
   height: 75px;
   width: 75px;
   text-align: center;
-  font-size: 50px;
+  font-size: 35px;
   border: 1px dotted black;
   margin: 5px;
   display: flex;
@@ -84,8 +110,12 @@ h3 {
   background-color: white;
 }
 
-.add .token {
-  mix-blend-mode: soft-light;
+img.arrow {
+  margin: 25px;
+}
+
+.add > img.arrow {
+    transform: rotate(180deg);
 }
 
 .flex-container {
@@ -112,7 +142,7 @@ h3 {
 
 .type {
   height: 85px;
-  width: 145px;
+  width: 175px;
   font-size: 13px;
   border: 3px solid var(--accentColor);
   border-radius: 5px;
@@ -137,7 +167,7 @@ h3 {
   .type {
     font-size: 20px;
     height: 145px;
-    width: 200px;
+    width: 85%;
   }
 
   .type img {
@@ -173,6 +203,13 @@ select.soflow {
    text-overflow: ellipsis;
    white-space: nowrap;
    width: 300px;
+}
+
+/* Make the inputs bigger on phones */
+@media screen and (max-device-width: 480px) and (orientation: portrait) {
+  select.soflow {
+    padding: 15px 25px;
+  }
 }
 
 select.soflow:focus {
