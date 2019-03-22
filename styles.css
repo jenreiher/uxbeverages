@@ -98,6 +98,12 @@ h3 {
   align-items: center;
 }
 
+.token-count {
+  font-size: 48px;
+  font-weight: 500;
+  margin-right: 15px;
+}
+
 .token.blue {
   background-color: blue;
 }
@@ -109,6 +115,15 @@ h3 {
 .token.white {
   background-color: white;
 }
+
+.token.green {
+  background-color: green;
+}
+
+.token.black {
+  background-color: black;
+}
+
 
 img.arrow {
   margin: 25px;

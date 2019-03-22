@@ -22,6 +22,7 @@ new Vue({
         name: 'Beer',
         class: 'type selected',
         icon: 'dark-beer',
+        tokenColor: 'white',
         buyOptions: [
           {
             name: 'canSm',
@@ -116,6 +117,7 @@ new Vue({
         name: 'Wine',
         class: 'type',
         icon: 'red-wine',
+        tokenColor: 'red',
         buyOptions: [
           {
             name: 'bottleSm',
@@ -161,6 +163,7 @@ new Vue({
         name: 'Cider or Coolers',
         class: 'type',
         icon: 'lager-beer',
+        tokenColor: 'blue',
         buyOptions: [
           {
             name: 'canSm',
@@ -248,6 +251,7 @@ new Vue({
         name: 'Spirit',
         class: 'type',
         icon: 'whyskey',
+        tokenColor: 'green',
         buyOptions: [
           {
             name: 'btlSm',
@@ -288,29 +292,12 @@ new Vue({
           },
         ],
       },
-      highball: {
-        value: 'highball',
-        name: 'Highball',
-        class: 'type',
-        icon: 'white-russian',
-        buyOptions: {
-
-        },
-        drinkOptions: [
-         {
-            name: 'glassShort',
-            description: '2oz spirit, short glass',
-            oz: 8,
-            mL: 235,
-            value: 5
-          },
-        ],
-      },
       nonalcoholic: {
         value: 'nonalcoholic',
         name: 'Non-alcoholic Beverage',
         class: 'type',
         icon: 'mojito',
+        tokenColor: 'black',
         buyOptions: [
           {
             name: 'canSm',
@@ -496,33 +483,10 @@ new Vue({
       
       return worth;
     },
-    tokenBreakdown: function() {
-      let remainder = this.total;
-      let white = 1;
-      let red = 2;
-      let blue = 5;
-
-      // Reset set existing tokens, because we've started again
-      this.tokens.white = 0;
-      this.tokens.red = 0;
-      this.tokens.blue = 0;
-
-      function calcRemainder(remainder, tokenValue) {
-        return remainder % tokenValue;
-      }
-
-      // This would be a fabulous recursive function, future Jen
-      if(remainder/blue >= 1) {
-        this.tokens.blue = Math.floor(remainder/blue);
-        remainder = calcRemainder(remainder, blue);
-      } 
-      if (remainder/red >= 1) {
-        this.tokens.red = Math.floor(remainder/red);
-        remainder = calcRemainder(remainder, red);
-      }
-      if (remainder/white >= 1) {
-        this.tokens.white = Math.floor(remainder/white);
-      }
+    tokenColor: function() {
+      let beverageType = this.type;
+      let selectedBeverage = this.beverages[beverageType];
+      return selectedBeverage.tokenColor;
     },
   },
 });

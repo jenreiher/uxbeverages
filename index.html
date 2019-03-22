@@ -19,7 +19,7 @@
           For your {{beverages[type].name.toLowerCase()}}, <em>{{ tokenMsg.emphasis }}</em>
         </span>
         <span v-if="calculateTokens != 0">
-          {{ calculateTokens }} token<span v-if="calculateTokens > 1">s</span>
+          {{ calculateTokens }} {{tokenColor}} token<span v-if="calculateTokens > 1">s</span>
         </span>
         <span v-if="tokenMsg.plain">
           {{ tokenMsg.plain }}
@@ -27,17 +27,11 @@
       </h2>
 
       <div class="total" v-bind="tokenBreakdown" v-if="calculateTokens != 0">
-        <div v-bind:class="tokens.class">
-          <div class="token white" v-for="n in tokens.white">
-            $1
-          </div>
-          <div class="token red"  v-for="n in tokens.red">
-            $2
-          </div>
-          <div class="token blue"  v-for="n in tokens.blue">
-            $5
-          </div>
+        <h1 v-bind:class="tokens.class">
+          <div class="token-count">{{ calculateTokens }} x</div>
+          <div class="token" v-bind:class="tokenColor">
 
+          </div>
           <img src="./images/direction-arrow.png" class="arrow" />
           <img src="./images/token-jar.png" class="token-jar" />
         </div>
