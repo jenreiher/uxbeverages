@@ -9,9 +9,6 @@
 
 <div id="app">
   <div class="calculator section">
-    <div class="header wrapper">
-      <h1>Beneverages Token Calculator</h1>
-    </div>
 
     <div class="output section wrapper is-sticky">
       <h2>
@@ -28,16 +25,20 @@
 
       <div class="total" v-bind="tokenBreakdown" v-if="calculateTokens != 0">
         <h1 v-bind:class="tokens.class">
-          <div class="token-count">{{ calculateTokens }} x</div>
-          <div class="token" v-bind:class="tokenColor">
+        <div class="token-count">{{ calculateTokens }} x</div>
+        <div class="token" v-bind:class="tokenColor">
 
-          </div>
-          <img src="./images/direction-arrow.png" class="arrow" />
-          <img src="./images/token-jar.png" class="token-jar" />
         </div>
-
+        <img src="./images/direction-arrow.png" class="arrow" />
+        <img src="./images/token-jar.png" class="token-jar" />
       </div>
+
     </div>
+  </div>
+
+  <div class="header wrapper">
+    <h1>Beneverages Token Calculator</h1>
+  </div>
 
     <div class="input wrapper type-selection">
       <h2>Whatcha Got?</h2>

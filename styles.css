@@ -32,7 +32,7 @@ h3 {
 }
 
 .section {
-    padding: 25px 0px;
+    padding: 25px 0;
 }
 
 .section:first-of-type {
@@ -69,8 +69,7 @@ h3 {
 }
 
 .is-sticky {
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   top: 0;
 }
 
